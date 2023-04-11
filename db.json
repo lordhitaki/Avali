@@ -1,0 +1,32 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "tarefa": "Correr",
+        "data": "20/05/2023",
+        "hora": "18:30",
+        "notas": "Treino diario"
+      },
+      {
+        "id": 2,
+        "tarefa": "Nadar",
+        "data": "20/05/2023",
+        "hora": "18:30",
+        "notas": "Treino diario"
+      },
+      {
+        "id": 3,
+        "tarefa": "Comer",
+        "data": "20/05/2023",
+        "hora": "18:30",
+        "notas": "Treino diario"
+      },
+      {
+        "id": 4,
+        "tarefa": "Filar a boia",
+        "data": "20/05/2023",
+        "hora": "18:30",
+        "notas": "Treino diario"
+      }
+    ]
+}
