@@ -14,7 +14,10 @@ import { NativeBaseProvider, Heading} from "native-base";
 
 import styles from './styles';
 import api from '../../../services/api';
-import Lp from '../../../components/listaPlana/flatList' 
+import Lp from '../../../components/listaPlana/flatList'
+import LP1 from '../../../components/listaPlana/flatListFalse' 
+import { Buttons } from '../../../components/buttons';
+import Time from '../../../components/time';
 
 export default function Lista() {
   const [dados, setDados] = useState([])
@@ -41,11 +44,23 @@ export default function Lista() {
           <AntDesign name="leftcircle" size={45} color="white" />
       </TouchableOpacity>
       <Text style={styles.textCabecalho}>
-        Minha lista de tarefas
+        <Time />
       </Text>
       <Image style={styles.img2} source={require('../../../components/images/eli2.png')}/>
+      <Text style={styles.textCabecalho1}> Minha Lista de tarefas</Text>
       </View>
         <Lp />
+        <Text style={styles.textComplet}>
+          Completas
+        </Text>
+        <LP1 />
+        <View style={styles.boxButton}>
+        <Buttons
+          title="Adicionar nova Tarefa"
+          onPress={() => navigation.navigate("AddTask")}
+          marginTop="5"
+        />
+        </View>
     </SafeAreaView>
     </TouchableWithoutFeedback>
   </NativeBaseProvider>

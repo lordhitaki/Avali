@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: "600",
-        left: 130,
+        left: 120,
         position: "absolute"
 
     },
@@ -67,6 +67,9 @@ const styles = StyleSheet.create({
         marginTop:330,
         width:"100%",
         marginLeft:12
+    },
+    boxButton:{
+        marginTop:120
     }
     
 

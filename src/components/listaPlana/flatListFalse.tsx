@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, Image, ScrollView } from "react-native";
 
 import api from "../../services/api";
-import styles from "./style";
+import styles from "./stylesFalse";
 import Check from "../checkBox";
 
 export default function () {

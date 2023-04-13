@@ -8,8 +8,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         textAlign:"center",
         marginHorizontal:30,
-        marginTop:-65,
-        height: "30%"
+        height:"30%"
     },
     itensList:{
         flex:1,

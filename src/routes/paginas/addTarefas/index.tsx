@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { NativeBaseProvider, Heading} from "native-base";
 import { View, TouchableOpacity, Text, Image, Keyboard,TouchableWithoutFeedback, SafeAreaView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -5,12 +6,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { AntDesign } from '@expo/vector-icons';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import styles from "./styles";
 import { Inputs } from "../../../components/inputs/";
 import { Buttons } from "../../../components/buttons"
 import { InputMenor } from "../../../components/inputs/inputMenor";
 import { InputMaior } from "../../../components/inputs/indexMaior";
+import api from '../../../services/api'
 
 
 type FormDataProps = {
@@ -21,19 +24,22 @@ type FormDataProps = {
 };
 const signUpSchema = yup.object({
   tarefa: yup.string()
-  .required("Informe o nome"),
+  .required("Adicione uma tarefa"),
   data: yup.string()
-    .required("Informe a senha")
-    .min(6, " A senha deve ter no minimo 6 digitos"),
+    .required("Selecione uma data"),
   hora: yup.string()
-    .required("Informe a senha")
-    .min(6, " A senha deve ter no minimo 6 digitos"),
+    .required("Selecione uu horario")
 });
 
 
 export default function AddTask() {
 
+  const navigation = useNavigation();
 
+  const [categoria, setCategoria] = useState("");
+  
+  const [errorCategoria, setErrorCategoria] = useState("")
+  
   const {
     control,
     handleSubmit,
@@ -43,11 +49,17 @@ export default function AddTask() {
   });
 
   function handleSignUp(data: FormDataProps) {
-    console.log(data);
+    if(categoria == ""){
+      setErrorCategoria("Selecione uma categoria")
+      return 
+     }else{
+      setErrorCategoria("")
+     }
+    api.post("/tasks", {...data, categoria}).then(({ data }) => { console.log( data )} )
     navigation.navigate("Lista");
   }
+  
 
-  const navigation = useNavigation();
   return (
     <NativeBaseProvider>
       <TouchableWithoutFeedback
@@ -62,7 +74,7 @@ export default function AddTask() {
             <AntDesign name="closecircle" size={45} color="white" />
         </TouchableOpacity>
         <Text style={styles.textCabecalho}>
-          Minha lista de tarefas
+          Adicionar uma nova tarefa
         </Text>
         <Image style={styles.img} source={require('../../../components/images/normal.png')}/>
         </View>
@@ -86,13 +98,16 @@ export default function AddTask() {
           <Text style={styles.textCategory}>
             Categorias
           </Text>
-        <TouchableOpacity>
+        <TouchableOpacity 
+        onPress={() => setCategoria("https://images2.imgbox.com/1f/88/DDVrvBXp_o.png")}>
           <Image source={require('../../../components/images/calen.png')}/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+         onPress={() => setCategoria("https://images2.imgbox.com/99/84/509wmiw1_o.png")}>
           <Image source={require('../../../components/images/papel.png')}/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+         onPress={() => setCategoria("https://images2.imgbox.com/24/28/RZqEMuh0_o.png")}>
           <Image source={require('../../../components/images/trofeu.png')}/>
         </TouchableOpacity>
         </View>
@@ -109,7 +124,6 @@ export default function AddTask() {
             <InputMenor
               placeholder="Informe o horario..."
               value={value}
-              secureTextEntry
               onChangeText={onChange}
               errorMessage={errors.data?.message}
             />
@@ -122,12 +136,11 @@ export default function AddTask() {
         </Heading>
         <Controller
           control={control}
-          name= "data"
+          name= "hora"
           render={({ field: { onChange, value } }) => (
             <InputMenor
               placeholder="Informe a hora..."
               value={value}
-              secureTextEntry
               onChangeText={onChange}
               errorMessage={errors.data?.message}
             />
@@ -148,16 +161,16 @@ export default function AddTask() {
               value={value}
               secureTextEntry
               onChangeText={onChange}
-              errorMessage={errors.data?.message}
             />
           )}
         />
        </View>
+       <View style={styles.boxButton}>
         <Buttons
           title="Salvar Tarefa"
-          // onPress={}
-          marginTop="40"
+          onPress={handleSubmit(handleSignUp)}
         />
+        </View>
         </View>
       </SafeAreaView>
       </TouchableWithoutFeedback>

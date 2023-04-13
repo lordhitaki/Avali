@@ -1,12 +1,9 @@
-import { position } from 'native-base/lib/typescript/theme/styled-system';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     tela:{
         flex: 1,
         backgroundColor: "#F1F5F9",
-        position:"absolute",
-
     },
     cabecalho:{
         backgroundColor:"#4A3780",
@@ -20,10 +17,16 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 18,
         fontWeight: "600",
-        left: 130,
-        position: "absolute",
         marginTop: 36
 
+    },
+    textCabecalho1:{
+        color: "#fff",
+        marginTop: 90,
+        right: 350,
+        fontSize: 26,
+        fontWeight: "700",
+        textAlign:"center"
     },
     fechar:{
         justifyContent:"flex-start",
@@ -37,21 +40,18 @@ const styles = StyleSheet.create({
         marginTop: 78
     },
     img2:{
-        marginLeft:200,
-        marginBottom:100
+        marginLeft:92,
     },
-    list1:{
-        position:"absolute",
-        backgroundColor:"#fff",
-        width:358,
-        height:290,
-        left: 25,
-        top: 158,
-        display:"flex",
-        flexDirection:"column",
-        alignItems:"flex-start",
-        gap:24,
-        borderRadius:16
+    textComplet:{
+        padding:20,
+        fontWeight:"600",
+        fontSize: 16,
+        
+    },
+    boxButton:{
+        width:"90%",
+        left: 20,
+        marginBottom:20
     },
 });
 

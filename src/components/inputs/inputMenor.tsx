@@ -6,7 +6,9 @@ type Props = IInputProps & {
 }
 
 export function InputMenor({ errorMessage = null, isInvalid, ...rest }: Props){
+    
     const invalid = !!errorMessage || isInvalid;
+    
     return(
     <FormControl
     mb={5} 
@@ -32,7 +34,8 @@ export function InputMenor({ errorMessage = null, isInvalid, ...rest }: Props){
 
         {...rest}
 
-        />
+        >
+        </Input>
         <FormControl.ErrorMessage>
             {errorMessage}
         </FormControl.ErrorMessage>
