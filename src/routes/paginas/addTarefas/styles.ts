@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
     },
     boxButton:{
         marginTop:120
+    },
+    inputHora:{
+        backgroundColor:"#fff",
+        height:60,
+        borderRadius:6
     }
     
 

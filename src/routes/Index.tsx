@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Lista from "./paginas/lista";
 import AddTask from "./paginas/addTarefas";
-import Flatz from "../components/listaPlana/flatList";
+import Flatz from "../../../Arquivos/listaPlana/flatList";
 
 const Stack = createNativeStackNavigator();
 

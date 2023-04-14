@@ -1,11 +1,28 @@
 {
   "tasks": [
     {
-      "tarefa": "Alex",
-      "data": "Alex",
-      "hora": "Alex",
-      "categoria": "https://images2.imgbox.com/1f/88/DDVrvBXp_o.png",
-      "id": 5
+      "tarefa": "Nadar",
+      "dia": "23/02/2030",
+      "hora": "15:40",
+      "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
+      "verificar": false,
+      "id": 1
+    },
+    {
+      "tarefa": "Corer",
+      "dia": "20/04/2055",
+      "hora": "14:20",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "verificar": false,
+      "id": 2
+    },
+    {
+      "tarefa": "Tentar",
+      "dia": "20/06/2023",
+      "hora": "14:30",
+      "notas": "Alou Molier",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "id": 3
     }
   ]
 }

@@ -19,7 +19,6 @@ export function InputMaior({ errorMessage = null, isInvalid, ...rest }: Props){
         placeholderTextColor="#AFAFB0"
         color="#000000"
         textAlignVertical='top'
-
         _focus={{
             bg:"#fff",
             borderWidth: 1,
