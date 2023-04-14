@@ -12,7 +12,7 @@
       "tarefa": "Corer",
       "dia": "20/04/2055",
       "hora": "14:20",
-      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "categoria": "x",
       "verificar": false,
       "id": 2
     },
@@ -23,6 +23,21 @@
       "notas": "Alou Molier",
       "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
       "id": 3
+    },
+    {
+      "hora": "20:40",
+      "dia": "29/09/1092",
+      "tarefa": "Treinar",
+      "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
+      "id": 4
+    },
+    {
+      "tarefa": "Estudar",
+      "dia": "29/04/2023",
+      "hora": "18:00",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "verificar": true,
+      "id": 5
     }
   ]
 }
