@@ -1,5 +1,7 @@
 import { Button, IButtonProps, Text } from "native-base";
 
+import colors from "../../colors";
+
 type Props = IButtonProps & {
     title: string;
 }
@@ -8,15 +10,15 @@ export function Buttons({ title, ...rest}:  Props){
         <Button
           w="full"
           h={16}
-          bg="#4A3780"
+          bg={colors.Roxo.Escuro}
           borderRadius="50"
           _pressed={{
-            bgColor:"fuchsia.600"
+            bgColor:colors.Roxo.Claro
         }}
         {...rest}
         >
             <Text 
-              color="white" 
+              color={colors.Branco.W}
               fontSize="md" >
               {title}
             </Text>

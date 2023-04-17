@@ -6,38 +6,17 @@
       "hora": "15:40",
       "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
       "verificar": false,
+      "notas": "Aqui jas 2",
       "id": 1
     },
     {
-      "tarefa": "Corer",
-      "dia": "20/04/2055",
-      "hora": "14:20",
-      "categoria": "x",
+      "tarefa": "Estudar React",
+      "dia": "18/05/2023",
+      "hora": "08:30",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
       "verificar": false,
+      "notas": "Estudar inputs",
       "id": 2
-    },
-    {
-      "tarefa": "Tentar",
-      "dia": "20/06/2023",
-      "hora": "14:30",
-      "notas": "Alou Molier",
-      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
-      "id": 3
-    },
-    {
-      "hora": "20:40",
-      "dia": "29/09/1092",
-      "tarefa": "Treinar",
-      "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
-      "id": 4
-    },
-    {
-      "tarefa": "Estudar",
-      "dia": "29/04/2023",
-      "hora": "18:00",
-      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
-      "verificar": true,
-      "id": 5
     }
   ]
 }

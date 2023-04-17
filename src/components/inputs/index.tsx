@@ -1,5 +1,6 @@
 import React from "react"
 import { Input, IInputProps, FormControl } from "native-base"
+import colors from "../../colors";
 
 type Props = IInputProps & {
     errorMessage?: string | null;
@@ -12,20 +13,20 @@ export function Inputs({ errorMessage = null, isInvalid, ...rest }: Props){
     mb={5} 
     isInvalid={invalid} >
         <Input
-        bg="#fff"
+        bg={colors.Branco.W}
         fontSize="md"
         h={16}
         isInvalid={invalid}
-        placeholderTextColor="#AFAFB0"
-        color="#000000"
+        placeholderTextColor={colors.Preto.C2}
+        color={colors.Preto.P}
         _focus={{
-            bg:"#fff",
+            bg:colors.Branco.W,
             borderWidth: 1,
-            borderColor:"#AFAFB0",
+            borderColor:colors.Preto.C2,
           }}
         _invalid={{
             borderWidth:2,
-            borderColor:"red.500",
+            borderColor:colors.Vermelho.R,
             marginTop: 0
         }}
 

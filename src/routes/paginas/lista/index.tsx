@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
+  Modal
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
@@ -18,11 +19,19 @@ import styles from "./styles";
 import api from "../../../services/api";
 import { Buttons } from "../../../components/buttons";
 import Time from "../../../components/time";
+import colors from "../../../colors";
 
 export default function Lista() {
   const [tarefasCompletas, setTarefasCompletas] = useState([]);
   const [tarefasIncompletas, setTarefasIncompletas] = useState([]);
   const [resposta, setResposta] = useState(null)
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openModal = (item) => {
+    setSelectedItem(item);
+    setModalVisible(true);
+  };
 
   useEffect(() => {
     handle();
@@ -50,7 +59,8 @@ export default function Lista() {
         dia: resposta[id - 1].dia,
         hora: resposta[id - 1].hora,
         categoria: resposta[id - 1].categoria,
-        verificar: !resposta[id - 1].verificar
+        verificar: !resposta[id - 1].verificar,
+        notas: resposta[id - 1].notas
       };
       await api.put(`/tasks/${id}`, info);
       handle();
@@ -59,33 +69,64 @@ export default function Lista() {
     }
   }
 
+
   const add = ({ item }) => (
     <View style={styles.itensList}>
       <View>
         <Image source={{ uri: item?.categoria }} style={styles.fotinha} />
       </View>
-      <View style={styles.boxTextFlat}>
-        <Text style={styles.textFlat}>{item?.tarefa}</Text>
-        <Text style={styles.textFlat1}>{item?.hora}</Text>
-      </View>
+      <TouchableOpacity
+        style={styles.boxTextFlat}
+        onPress={() => openModal(item)}>
+        <View>
+          <Text style={styles.textFlat}>{item?.tarefa}</Text>
+          <Text style={styles.textFlat1}>{item?.hora}</Text>
+        </View>
+      </TouchableOpacity>
       <Checkbox
         value=""
         colorScheme="purple"
         size="lg"
         aria-label="CheckTarefa"
         onChange={() => change(item.id)}
-      />
+        style={styles.checkBoxFalse}
+        />
+      <View style={styles.centeredView}>
+        <Modal
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            alert('Modal has been closed.');
+            setModalVisible(false);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>{selectedItem?.notas}</Text>
+              <TouchableOpacity
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(false)}>
+                <Text style={styles.textStyle}>Fechar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      </View>
     </View>
+    
   );
   const addIsFalse = ({ item }) => (
     <View style={styles.itensListFalse}>
       <View>
         <Image source={{ uri: item?.categoria }} style={styles.fotinhaFalse} />
       </View>
-      <View style={styles.boxTextFlatFalse}>
-        <Text style={styles.textFlatFalse}>{item?.tarefa}</Text>
-        <Text style={styles.textFlat1False}>{item?.hora}</Text>
-      </View>
+      <TouchableOpacity
+        style={styles.boxTextFlatFalse}
+        onPress={() => openModal(item)}>
+        <View>
+          <Text style={styles.textFlatFalse}>{item?.tarefa}</Text>
+          <Text style={styles.textFlat1False}>{item?.hora}</Text>
+        </View>
+      </TouchableOpacity>
       <Checkbox
         value=""
         colorScheme="purple"
@@ -93,7 +134,28 @@ export default function Lista() {
         aria-label="CheckTarefa"
         onChange={() => change(item.id)}
         isChecked
+        style={styles.checkBoxFalse}
       />
+      <View style={styles.centeredView}>
+        <Modal
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            alert('Modal has been closed.');
+            setModalVisible(false);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>{selectedItem?.notas}</Text>
+              <TouchableOpacity
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(false)}>
+                <Text style={styles.textStyle}>Fechar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      </View>
     </View>
   );
 
@@ -115,7 +177,7 @@ export default function Lista() {
               style={styles.fechar}
               onPress={() => navigation.navigate("AddTask")}
             >
-              <AntDesign name="leftcircle" size={45} color="white" />
+              <AntDesign name="leftcircle" size={45} color={colors.Branco.W} />
             </TouchableOpacity>
             <Text style={styles.textCabecalho}>
               <Time />

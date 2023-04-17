@@ -1,10 +1,10 @@
-import { position } from 'native-base/lib/typescript/theme/styled-system';
 import { StyleSheet } from 'react-native';
+import colors from '../../../colors';
 
 const styles = StyleSheet.create({
     tela:{
         flex: 1,
-        backgroundColor: "#F1F5F9",
+        backgroundColor: colors.Branco.A,
         position:"absolute"
     },
     tela2:{
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         marginTop:35
     },
     cabecalho:{
-        backgroundColor:"#4A3780",
+        backgroundColor: colors.Roxo.Escuro,
         flex: 1,
         width: "100%",
         maxHeight: 96,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         
     },
     textCabecalho:{
-        color: "#fff",
+        color: colors.Branco.W,
         fontSize: 18,
         fontWeight: "600",
         left: 120,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         marginTop:120
     },
     inputHora:{
-        backgroundColor:"#fff",
+        backgroundColor: colors.Branco.W,
         height:60,
         borderRadius:6
     }

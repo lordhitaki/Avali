@@ -1,12 +1,14 @@
+import { color } from 'native-base/lib/typescript/theme/styled-system';
 import { StyleSheet } from 'react-native';
+import colors from '../../../colors';
 
 const styles = StyleSheet.create({
     tela:{
         flex: 1,
-        backgroundColor: "#F1F5F9",
+        backgroundColor: colors.Branco.A,
     },
     cabecalho:{
-        backgroundColor:"#4A3780",
+        backgroundColor: colors.Roxo.Escuro,
         flex: 1,
         width: "100%",
         minHeight: 222,
@@ -14,14 +16,14 @@ const styles = StyleSheet.create({
         flexDirection:"row",        
     },
     textCabecalho:{
-        color: "#fff",
+        color: colors.Branco.W,
         fontSize: 18,
         fontWeight: "600",
         marginTop: 36
 
     },
     textCabecalho1:{
-        color: "#fff",
+        color: colors.Branco.W,
         marginTop: 90,
         right: 350,
         fontSize: 26,
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
         marginBottom:20
     },
     list1:{
-        backgroundColor:"#fff",
+        backgroundColor:colors.Branco.W,
         gap:24,
         borderRadius:16,
         justifyContent:"center",
@@ -70,13 +72,13 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         padding: 16,
         alignItems:"center",
-        borderBottomColor:"#ECEEF1",
+        borderBottomColor: colors.Branco.C3,
         gap: 30,
     },
     fotinha:{
         width: 50,
         height: 50,
-        backgroundColor: "#fff"
+        backgroundColor: colors.Branco.W
     },
     boxTextFlat:{
         flex: 1,
@@ -85,17 +87,16 @@ const styles = StyleSheet.create({
     textFlat:{
         fontSize: 18,
         fontWeight:"600",
-        color:"#1b1b1d",
+        color: colors.Preto.C,
 
     },
     textFlat1:{
         fontSize: 16,
         fontWeight:"400",
-        color:"#1b1b1d",
-
+        color: colors.Preto.C,
     },
     list1False:{
-        backgroundColor:"#fff",
+        backgroundColor: colors.Branco.W,
         gap:24,
         borderRadius:16,
         justifyContent:"center",
@@ -111,13 +112,13 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         padding: 16,
         alignItems:"center",
-        borderBottomColor:"#ECEEF1",
+        borderBottomColor: colors.Branco.C3,
         gap: 30,
     },
     fotinhaFalse:{
         width: 50,
         height: 50,
-        backgroundColor: "#fff",
+        backgroundColor: colors.Branco.W,
         opacity: 0.5
     },
     boxTextFlatFalse:{
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
     textFlatFalse:{
         fontSize: 18,
         fontWeight:"600",
-        color:"#1b1b1d",
+        color: colors.Preto.C,
         textDecorationLine:"line-through",
         opacity: 0.5
 
@@ -137,10 +138,56 @@ const styles = StyleSheet.create({
     textFlat1False:{
         fontSize: 16,
         fontWeight:"400",
-        color:"#1b1b1d",
+        color: colors.Preto.C,
         textDecorationLine:"line-through",
         opacity: 0.5
-    }
+    },
+    checkBoxFalse:{
+        justifyContent:"flex-end",
+        alignItems: "flex-end",
+        left: 100
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22,
+      },
+      modalView: {
+        margin: 20,
+        backgroundColor: colors.Branco.W,
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+        shadowColor: colors.Preto.P,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+      },
+      button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+      },
+      buttonClose: {
+        top: 20,
+        backgroundColor: colors.Roxo.Escuro,
+      },
+      textStyle: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight:"600",
+      },
 });
 
 export default styles;

@@ -21,6 +21,7 @@ import { Buttons } from "../../../components/buttons";
 import { InputMenor } from "../../../components/inputs/inputMenor";
 import { InputMaior } from "../../../components/inputs/indexMaior";
 import api from "../../../services/api";
+import colors from "../../../colors";
 
 type FormDataProps = {
   tarefa: string;
@@ -29,14 +30,14 @@ type FormDataProps = {
   notas: string;
 };
 
-let dataValidation = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
+let dataValidation =
+  /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
 let horaValidation = /^(?:([01]\d|2[0-3]).([0-5]\d))$/;
 
 export default function AddTask() {
   const navigation = useNavigation();
   const [categoria, setCategoria] = useState("");
   const [errorCategoria, setErrorCategoria] = useState("");
-
 
   const signUpSchema = yup.object({
     tarefa: yup.string().required("Adicione uma tarefa"),
@@ -48,8 +49,9 @@ export default function AddTask() {
       .string()
       .matches(horaValidation, "Informe um horario valido")
       .required("Informe uma hora"),
-    notas: yup.string()
+    notas: yup.string(),
   });
+
   const {
     control,
     handleSubmit,
@@ -61,7 +63,7 @@ export default function AddTask() {
   function handleSignUp(data: FormDataProps) {
     if (categoria == "") {
       setErrorCategoria("Selecione uma categoria");
-      alert("Selecione uma categoria.")
+      alert("Selecione uma categoria.");
       return;
     } else {
       setErrorCategoria("");
@@ -85,7 +87,7 @@ export default function AddTask() {
               style={styles.fechar}
               onPress={() => navigation.navigate("Lista")}
             >
-              <AntDesign name="closecircle" size={45} color="white" />
+              <AntDesign name="closecircle" size={45} color={colors.Branco.W} />
             </TouchableOpacity>
             <Text style={styles.textCabecalho}>Adicionar uma nova tarefa</Text>
             <Image
@@ -96,7 +98,7 @@ export default function AddTask() {
           <View style={styles.tela2}>
             <Heading
               fontSize={16}
-              color="#1B1B1D"
+              color={colors.Preto.C}
               marginBottom="2"
               fontWeight="bold"
             >
@@ -117,8 +119,7 @@ export default function AddTask() {
             <View style={styles.categorys}>
               <Text style={styles.textCategory}>Categorias</Text>
               <TouchableOpacity
-              activeOpacity={0.5}
-                onPressIn={() =>
+                onPress={() =>
                   setCategoria(
                     "https://images2.imgbox.com/1f/88/DDVrvBXp_o.png"
                   )
@@ -156,7 +157,7 @@ export default function AddTask() {
               <View style={styles.inputsMen}>
                 <Heading
                   fontSize={16}
-                  color="#1B1B1D"
+                  color={colors.Preto.C}
                   marginBottom="2"
                   fontWeight="bold"
                 >
@@ -178,7 +179,7 @@ export default function AddTask() {
               <View style={styles.inputsMen}>
                 <Heading
                   fontSize={16}
-                  color="#1B1B1D"
+                  color={colors.Preto.C}
                   marginBottom="2"
                   fontWeight="bold"
                 >
@@ -201,7 +202,7 @@ export default function AddTask() {
             <View style={styles.boxNotas}>
               <Heading
                 fontSize={16}
-                color="#1B1B1D"
+                color={colors.Preto.C}
                 marginBottom="2"
                 fontWeight="bold"
               >
