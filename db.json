@@ -5,7 +5,7 @@
       "dia": "23/02/2030",
       "hora": "15:40",
       "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
-      "verificar": false,
+      "verificar": true,
       "notas": "Aqui jas 2",
       "id": 1
     },
@@ -17,6 +17,40 @@
       "verificar": false,
       "notas": "Estudar inputs",
       "id": 2
+    },
+    {
+      "tarefa": "Leitura",
+      "dia": "20/04/2023",
+      "hora": "15:30",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "verificar": false,
+      "notas": "KPOSAKPOSAKPOSKSApoksomokmx cmp mpkapokmdsmfpoidjoijsjadfpoisajfondsfnsapdvnjsandoijfsipjfapoidsjfpoisdjoifjoidsjfoidsjfposajfdfdfdsaf",
+      "id": 3
+    },
+    {
+      "tarefa": "dormir",
+      "dia": "13/04/2003",
+      "hora": "02:20",
+      "categoria": "https://images2.imgbox.com/24/28/RZqEMuh0_o.png",
+      "verificar": false,
+      "notas": "Hora de dormir amiguinho.",
+      "id": 4
+    },
+    {
+      "tarefa": "Comer",
+      "dia": "24/04/2023",
+      "hora": "11:40",
+      "notas": "X-bacon",
+      "categoria": "https://images2.imgbox.com/1f/88/DDVrvBXp_o.png",
+      "id": 5
+    },
+    {
+      "tarefa": "Comer",
+      "dia": "11/05/2023",
+      "hora": "20.40",
+      "notas": "Comer o vini",
+      "categoria": "https://images2.imgbox.com/99/84/509wmiw1_o.png",
+      "id": 6
     }
   ]
 }
